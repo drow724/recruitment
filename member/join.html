@@ -1,0 +1,1665 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>회원가입 - 사람인에 오신 것을 환영합니다! - 사람인</title>
+<meta name="Description"
+	content="개인/기업 회원가입 안내: 취업 확률을 높이는 사람인 만의 특별한 개인회원 서비스, 기본 이력서/명품 이력서/직종별 이력서 등 다양하고 쉬운 이력서 작성, 무료 입사지원 통계 서비스, 무료 이력서 강조 효과 서비스. 채용효과를 높이는 사람인 만의 특별한 기업회원 서비스 - 최대 10개까지 채용공고 무료 등록, 채용업무 효율화 - 편리하고 간편한 지원자 관리, 명품 인재가 가득한 인재정보 열람 상품, 높은 채용효과를 보장하는 저렴하고 다양한 채용광고 상품.">
+<meta name="naver" content="nosublinks">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ko-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link href="/front/static/css/join.css" media="all" rel="stylesheet" type="text/css">
+<script type="text/javascript"
+	src="//www.saraminimage.co.kr/js/libs/jquery-1.8.3.min.js"></script>
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="/front/static/js/join.js"></script>
+<script type="text/javascript" src="/front/static/js/placeholder.js"></script>
+</head>
+<body class="join_body">
+	<div id="join_wrapper" class="">
+		<div id="content" class="join_cont_wrap">
+			<!-- s: 회원가입 탭 -->
+			<ul class="member_category">
+				<li class="on"><h2 class="tab01">
+						<a href="/zf_user/member/registration/index?type=p"
+							class="tab_btn"> <strong>개인회원가입</strong>만 15세 이상 가능
+						</a>
+					</h2></li>
+				<li class="">
+					<h2 class="tab02">
+						<a href="/zf_user/member/registration/index?type=c"
+							class="tab_btn"> <strong>기업회원가입</strong>
+						</a>
+					</h2>
+				</li>
+			</ul>
+			<!-- <ul class="wrap_social" id="social_login">
+				<li><a
+					href="/zf_user/auth/sign-in-with?provider=naver.com&display=popup"
+					data-provider="naver" class="sl_naver">네이버로 로그인</a></li>
+				<li><a
+					href="/zf_user/auth/sign-in-with?provider=facebook.com&display=popup"
+					data-provider="facebook" class="sl_facebook">페이스북으로 로그인</a></li>
+				<li><a
+					href="/zf_user/auth/sign-in-with?provider=kakao.com&display=popup"
+					data-provider="kakao" class="sl_kakao">카카오로 로그인</a></li>
+				<li><a
+					href="/zf_user/auth/sign-in-with?provider=google.com&display=popup"
+					data-provider="google" class="sl_google">구글로 로그인</a></li>
+				<li><a
+					href="/zf_user/auth/sign-in-with?provider=apple.com&display=popup"
+					data-provider="apple" class="sl_apple">Apple로 로그인</a></li>
+			</ul> -->
+			<!-- e: 회원가입 탭 -->
+			<div class="caution_stxt">*필수입력정보입니다.</div>
+
+			<!-- s: 콘텐츠 영역 -->
+			<div>
+				<!-- s: 개인회원 -->
+				<div id="member_personal" class="member_cate">
+					<form name=frm id="frm" method="post" action="/member/join">
+						<fieldset>
+							<!-- ID/PW -->
+							<h3 class="tit_join_member personal">
+								<span class="input_personal">ID/PW</span>
+							</h3>
+							<div class="cont_division">
+								<ul class="write_base">
+									<li class="item must"><label for="id" class="blind">아이디</label>
+										<input name="userId" id="id" type="text" title="사용자 아이디"
+										maxlength="20" style="ime-mode: disabled" autocapitalize="off"
+										autocomplete="off" placeholder="아이디"> <input
+										type="text" style="display: none;">
+										<p class="alert_column warning_txt" id="idCheckMsg1">이미
+											사용중인 아이디입니다.</p>
+										<p class="alert_column good_txt" id="idCheckMsg2">사용가능한
+											아이디입니다.</p></li>
+									<li class="end item must"><label for="password1"
+										class="blind">비밀번호</label> <input autocapitalize="off"
+										name="userPassword" id="password1" type="password"
+										title="비밀번호" maxlength="16" autocomplete="off"
+										placeholder="비밀번호">
+										<p class="alert_column warning_txt" id="password1_warning_txt">
+											<span>8~16자리 영문 대소문자, 숫자, 특수문자 중 3가지 이상 조합</span>
+										</p>
+										<p class="alert_column good_txt" id="password1_good_txt">사용가능한
+											비밀번호입니다. (안전성 강도 매우 강함)</p></li>
+								</ul>
+							</div>
+							<!-- //ID/PW -->
+
+							<!-- 초간단인증 -->
+							<h3 class="tit_join_member">
+								<span class="terms_agree">인적사항</span>
+							</h3>
+							<div class="cont_division">
+								<!-- 인증방법 -->
+								<!--  								<div class="tab_identify" id="pos_cert_num">
+									<span class="blind">인증하기</span>
+									<div class="identify_select person">
+										<button class="btn_identify btn_phone" id="identify_phone"
+											type="button">
+											<span>휴대폰 인증</span>
+										</button>
+										<button class="btn_identify btn_email" id="identify_email"
+											type="button">
+											<span>이메일 인증</span>
+										</button>
+									</div>
+									<input type="hidden" name="cellnum" id="cellnum"> <input
+										type="hidden" name="user_nm" id="user_nm"> <input
+										type="hidden" name="birth_date" id="birth_date"> <input
+										type="hidden" name="email_id" id="email_id">
+									<p class="alert_column good_txt" id="confirm_remain_time_area"
+										style="display: none;">휴대폰 인증 성공. 아래 필수정보를 입력해주세요.</p>
+								</div> -->
+								<div class="identify_phone">
+									<ul class="write_base select_input">
+
+										<li class="certi_list item must" id="phone_certi_list"
+											name="phone_certi_list">
+											<div class="input_collect item">
+												<label for="sms_cellnum"
+													class="tit_inp fullsize_input except">연락처</label> 입력시 on
+												class 삭제 <input type="text" id="sms_cellnum"
+													name="tmp_cellnum" placeholder="'-' 없이 입력">
+											</div> <!-- <div class="agree_selective_info check_identify">
+												<label for="ignore_cell_1" class="check_custom check_off"
+													onclick="set_overseas_selective();"><input
+													type="checkbox" id="ignore_cell_1"></label> <span
+													class="clickable">해외거주</span>
+											</div> --> <!-- <button type="button" class="btn_back btn_cert_pop"
+												data-popupid="layer_pop_byphone">
+												<span>인증</span>
+											</button> -->
+											<p class="alert_column warning_txt" name="msg_phone"
+												id="sms_phone_msg">잘못된 휴대폰 번호입니다. 휴대폰 번호를 정확하게 입력해주세요.</p>
+											<p class="alert_column good_txt" id="phone_msg_good">인증되었습니다</p>
+										</li>
+
+										<li class="item must"><label for="sms_user_nm"
+											class="tit_inp">이름</label> <input type="text"
+											name="tmp_user_nm" id="sms_user_nm" style="ime-mode: active"
+											autocapitalize="off" placeholder="">
+											<p class="alert_column warning_txt" id="sms_user_nm_msg"
+												name="user_nm_msg">필수정보 입니다.</p></li>
+
+										<li class="item must">
+											<div class="select_align_row">
+												<label for="sms_birth_date" class="tit_inp">생년월일</label> <input
+													type="text" name="tmp_birth_date" id="sms_birth_date"
+													title="사용자 출생년도" maxlength="8" autocapitalize="off"
+													placeholder="YYYYMMDD" class="che">
+											</div>
+											<div class="wrap_collection_basis">
+												<a class="btn_link"
+													onmouseover="document.getElementById('collectionBasisContents').style.display='inline';"
+													onmouseout="document.getElementById('collectionBasisContents').style.display='none';"
+													style="cursor: pointer">수집 근거</a>
+												<div id="collectionBasisContents"
+													class="layer_speech_burble" style="display: none;">
+													<p>취직 최저 연령에 대한 제한 (근로기준법 제 64조 1항)</p>
+												</div>
+											</div>
+											<p class="alert_column warning_txt" id="sms_cyr_msg"
+												name="cyr_msg">&nbsp;</p>
+										</li>
+
+										<li class="email_column item must">
+											<div class="select_align_row input item">
+												<label for="mail_email_id" class="tit_inp">이메일</label> <input
+													type="text" id="mail_email_id" name="tmp_email_id"
+													style="ime-mode: inactive" placeholder="">
+											</div> <!-- <button type="button" class="btn_back btn_cert_pop"
+												data-popupid="layer_pop_byemail">
+												<span>인증</span>
+											</button> 자동리스트 영역 -->
+											<ul class="auto_list_area email_list" style="display: none;">
+												<li class="auto_list"><a href="javascript:;"
+													onclick="return false;" class="email_domain"><strong
+														class="txt_input"></strong>@naver.com</a></li>
+												<li class="auto_list"><a href="javascript:;"
+													onclick="return false;" class="email_domain"><strong
+														class="txt_input"></strong>@gmail.com</a></li>
+												<li class="auto_list"><a href="javascript:;"
+													onclick="return false;" class="email_domain"><strong
+														class="txt_input"></strong>@daum.net</a></li>
+												<li class="auto_list"><a href="javascript:;"
+													onclick="return false;" class="email_domain"><strong
+														class="txt_input"></strong>@nate.com</a></li>
+												<li class="auto_list"><a href="javascript:;"
+													onclick="return false;" class="email_domain"><strong
+														class="txt_input"></strong>@outlook.com</a></li>
+											</ul> 자동리스트 영역
+											<p class="alert_column warning_txt" id="mail_msg_email1"
+												name="msg_email1">이메일 주소를 다시 확인해주세요.</p>
+											<p class="alert_column good_txt" id="msg_email2">인증되었습니다</p>
+										</li>
+									</ul>
+								</div>
+								<!-- //휴대폰 인증 -->
+
+								<!-- 이메일 인증 -->
+								<!-- <div class="identify_mail" style="display: none;">
+									<ul class="write_base select_input">
+										<li class="email_column item must">
+											<div class="select_align_row input item">
+												<label for="mail_email_id" class="tit_inp">이메일</label> <input
+													type="text" id="mail_email_id" name="tmp_email_id"
+													style="ime-mode: inactive" placeholder="">
+											</div>
+											<button type="button" class="btn_back btn_cert_pop"
+												data-popupid="layer_pop_byemail">
+												<span>인증</span>
+											</button> 자동리스트 영역
+											<ul class="auto_list_area email_list" style="display: none;">
+												<li class="auto_list"><a href="javascript:;"
+													onclick="return false;" class="email_domain"><strong
+														class="txt_input"></strong>@naver.com</a></li>
+												<li class="auto_list"><a href="javascript:;"
+													onclick="return false;" class="email_domain"><strong
+														class="txt_input"></strong>@gmail.com</a></li>
+												<li class="auto_list"><a href="javascript:;"
+													onclick="return false;" class="email_domain"><strong
+														class="txt_input"></strong>@daum.net</a></li>
+												<li class="auto_list"><a href="javascript:;"
+													onclick="return false;" class="email_domain"><strong
+														class="txt_input"></strong>@nate.com</a></li>
+												<li class="auto_list"><a href="javascript:;"
+													onclick="return false;" class="email_domain"><strong
+														class="txt_input"></strong>@outlook.com</a></li>
+											</ul> 자동리스트 영역
+											<p class="alert_column warning_txt" id="mail_msg_email1"
+												name="msg_email1">이메일 주소를 다시 확인해주세요.</p>
+											<p class="alert_column good_txt" id="msg_email2">인증되었습니다</p>
+										</li>
+
+										<li class="item must"><label for="mail_user_nm"
+											class="tit_inp">이름</label> <input type="text"
+											name="tmp_user_nm" id="mail_user_nm" style="ime-mode: active"
+											autocapitalize="off" placeholder="">
+											<p class="alert_column warning_txt" id="mail_user_nm_msg"
+												name="user_nm_msg">필수정보 입니다.</p></li>
+
+										<li class="item must">
+											<div class="select_align_row">
+												<label for="mail_birth_date" class="tit_inp">생년월일</label> <input
+													type="text" name="tmp_birth_date" id="mail_birth_date"
+													title="사용자 출생년도" maxlength="8" autocapitalize="off"
+													placeholder="YYYYMMDD" class="che">
+											</div>
+
+											<div class="wrap_collection_basis">
+												<a class="btn_link"
+													onmouseover="document.getElementById('collectionBasisContents1').style.display='inline';"
+													onmouseout="document.getElementById('collectionBasisContents1').style.display='none';"
+													style="cursor: pointer">수집 근거</a>
+												<div id="collectionBasisContents1"
+													class="layer_speech_burble" style="display: none;">
+													<p>취직 최저 연령에 대한 제한 (근로기준법 제 64조 1항)</p>
+												</div>
+											</div>
+
+											<p class="alert_column warning_txt" id="mail_cyr_msg"
+												name="cyr_msg">&nbsp;</p>
+										</li>
+
+										<li class="certi_list item must" id="phone_certi_list"
+											name="phone_certi_list">
+											<div class="input_collect item">
+												<label for="mail_cellnum"
+													class="tit_inp fullsize_input except">연락처</label>
+												입력시 on class 삭제
+												<input type="text" id="mail_cellnum" name="tmp_cellnum"
+													placeholder="'-' 없이 입력">
+											</div>
+											<div class="agree_selective_info">
+												<label for="ignore_cell_2" class="check_custom check_off"
+													onclick="set_overseas_selective();"><input
+													type="checkbox" id="ignore_cell_2"></label> <span
+													class="clickable">해외거주</span>
+												<div id="collectionBasisContentsOverseas"
+													class="layer_speech_burble style2 small"
+													style="display: none;">
+													<button type="button" class="btn_close_layer">레이어
+														닫기</button>
+													<p>
+														해외 거주자는<br />휴대폰 번호 없이 가입 가능합니다.
+													</p>
+												</div>
+											</div>
+											<p class="alert_column warning_txt" name="msg_phone"
+												id="mail_phone_msg">잘못된 휴대폰 번호입니다. 휴대폰 번호를 정확하게 입력해주세요.</p>
+										</li>
+									</ul>
+								</div> -->
+
+								<!-- 이메일 인증 -->
+								<div class="common_identify">
+									<ul class="write_base select_input">
+										<li class="item"><strong class="anterior_txt tit_inp">성별</strong>
+											<div class="agree_selective_info">
+												<label for="agreeSelectiveGender"
+													class="check_custom check_off"
+													id="agreeSelectiveGender_label"
+													onclick="set_agree_selective_gender();"> <input
+													type="checkbox" id="agreeSelectiveGender" />
+												</label> <span class="clickable">선택항목수집동의</span>
+												<div id="collectionBasisContentsSex"
+													class="layer_speech_burble style2" style="display: none;">
+													<button type="button" class="btn_close_layer">레이어
+														닫기</button>
+													<p>
+														성별을 등록하려면,<br>선택항목 수집에 동의하여야 합니다.
+													</p>
+												</div>
+											</div>
+											<p class="btn_check btn_gender" id="sex_btn">
+												<a href="javascript:" class="man"
+													onclick="document.getElementById('msg_sex').style.display='none';">남자</a>
+												<a href="javascript:" class="woman"
+													onclick="document.getElementById('msg_sex').style.display='none';">여자</a>
+											</p>
+											<p class="alert_column warning_txt" id="msg_sex">&nbsp;</p> <input
+											type="hidden" name="hidden_agree_sex" value="off"
+											id="hidden_agree_sex"></li>
+
+										<li class="adress_column item">
+											<div class="adress_domestic _searchArea">
+												<label for="address_main" id="address_label" class="tit_inp">주소</label>
+												<input type="text" class="address_main" id="postNo" name="address_main"
+													style="width:100px;" readonly="readonly" placeholder="우편번호/주소">
+											</div>
+											<div class="adress_domestic _searchArea">
+												<label for="address_main" id="address_label" class="tit_inp">주소</label>
+												<input type="text" id="address_main" name="address_main"
+													 readonly="readonly" class="address_main" placeholder="우편번호/주소">
+											</div>
+											<input type="hidden" id="addrRef">
+											<div class="adress_global" style="display: none;">
+												<div class="select_align_row">
+													<span class="selectbox"> <a href='' class="seltxt">
+															<span class="tval" id="overseaText">국가 선택</span>
+													</a> <span class="depth _optionOversea"
+														style="max-height: 200px;"> <a href=""
+															class="value" data-value="260-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">가나</a> <a href="##" class="value"
+															data-value="260-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">가봉</a> <a href="##" class="value"
+															data-value="231-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">가이아나</a><a href="##" class="value"
+															data-value="261-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">감비아</a><a href="##" class="value"
+															data-value="231-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">과델루프</a><a href="##" class="value"
+															data-value="230-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">과테말라</a><a href="##" class="value"
+															data-value="250-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">괌</a><a href="##" class="value"
+															data-value="242-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">그라나다</a><a href="##" class="value"
+															data-value="211-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">그루지아</a><a href="##" class="value"
+															data-value="240-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">그리스</a><a href="##" class="value"
+															data-value="220-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">그린란드</a><a href="##" class="value"
+															data-value="261-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">기니</a><a href="##" class="value"
+															data-value="261-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">기니비소우</a><a href="##"
+															class="value" data-value="231-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">기아나(프랑스령)</a><a href="##"
+															class="value" data-value="261-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">나미비아</a><a href="##" class="value"
+															data-value="252-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">나우루공화국</a><a href="##"
+															class="value" data-value="260-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">나이지리아</a><a href="##"
+															class="value" data-value="239-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">남미기타</a><a href="##" class="value"
+															data-value="260-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">남아프리카공화국</a><a href="##"
+															class="value" data-value="240-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">네덜란드</a><a href="##" class="value"
+															data-value="221-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">네덜란드령 안틸레스제도</a><a href="##"
+															class="value" data-value="211-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">네팔</a><a href="##" class="value"
+															data-value="240-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">노르웨이</a><a href="##" class="value"
+															data-value="250-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">뉴질랜드</a><a href="##" class="value"
+															data-value="250-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">뉴칼레도니아섬</a><a href="##"
+															class="value" data-value="261-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">니제르</a><a href="##" class="value"
+															data-value="231-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">니카라과</a><a href="##" class="value"
+															data-value="210-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">대만</a><a href="##" class="value"
+															data-value="240-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">덴마크</a><a href="##" class="value"
+															data-value="220-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">도미니카공화국</a><a href="##"
+															class="value" data-value="231-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">도미니카연방</a><a href="##"
+															class="value" data-value="240-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">독일</a><a href="##" class="value"
+															data-value="214-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">동티모르</a><a href="##" class="value"
+															data-value="212-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">라오스</a><a href="##" class="value"
+															data-value="262-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">라이베리아</a><a href="##"
+															class="value" data-value="242-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">라트비아</a><a href="##" class="value"
+															data-value="240-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">러시아</a><a href="##" class="value"
+															data-value="262-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">레뉴니용</a><a href="##" class="value"
+															data-value="212-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">레바논</a><a href="##" class="value"
+															data-value="242-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">루마니아</a><a href="##" class="value"
+															data-value="242-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">룩셈부르크</a><a href="##"
+															class="value" data-value="262-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">르완다</a><a href="##" class="value"
+															data-value="260-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">리비아</a><a href="##" class="value"
+															data-value="242-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">리투아니아</a><a href="##"
+															class="value" data-value="245-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">리히텐슈타인</a><a href="##"
+															class="value" data-value="262-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">마다가스카르</a><a href="##"
+															class="value" data-value="231-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">마르티니크섬</a><a href="##"
+															class="value" data-value="250-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">마샬군도</a><a href="##" class="value"
+															data-value="242-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">마케도니아</a><a href="##"
+															class="value" data-value="262-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">말라위</a><a href="##" class="value"
+															data-value="210-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">말레이시아</a><a href="##"
+															class="value" data-value="262-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">말리</a><a href="##" class="value"
+															data-value="220-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">멕시코</a><a href="##" class="value"
+															data-value="242-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">모나코</a><a href="##" class="value"
+															data-value="260-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">모로코</a><a href="##" class="value"
+															data-value="265-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">모리셔스</a><a href="##" class="value"
+															data-value="262-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">모리타니아</a><a href="##"
+															class="value" data-value="262-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">모잠비크</a><a href="##" class="value"
+															data-value="245-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">몬테네그로</a><a href="##"
+															class="value" data-value="245-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">몰도바</a><a href="##" class="value"
+															data-value="212-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">몰디브</a><a href="##" class="value"
+															data-value="242-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">몰타</a><a href="##" class="value"
+															data-value="210-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">몽골</a><a href="##" class="value"
+															data-value="242-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">몽트세라</a><a href="##" class="value"
+															data-value="220-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">미국</a><a href="##" class="value"
+															data-value="210-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">미얀마</a><a href="##" class="value"
+															data-value="252-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">미크로네시아</a><a href="##"
+															class="value" data-value="250-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">바누아투</a><a href="##" class="value"
+															data-value="212-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">바레인</a><a href="##" class="value"
+															data-value="220-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">바베이도스</a><a href="##"
+															class="value" data-value="245-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">바티칸시국</a><a href="##"
+															class="value" data-value="220-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">바하마</a><a href="##" class="value"
+															data-value="210-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">방글라데시</a><a href="##"
+															class="value" data-value="212-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">버마</a><a href="##" class="value"
+															data-value="220-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">버뮤다</a><a href="##" class="value"
+															data-value="232-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">버진제도</a><a href="##" class="value"
+															data-value="262-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">베냉</a><a href="##" class="value"
+															data-value="230-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">베네수엘라</a><a href="##"
+															class="value" data-value="210-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">베트남</a><a href="##" class="value"
+															data-value="240-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">벨기에</a><a href="##" class="value"
+															data-value="242-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">벨로루시</a><a href="##" class="value"
+															data-value="232-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">벨리즈</a><a href="##" class="value"
+															data-value="243-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">보스니아헤르체고비나</a><a href="##"
+															class="value" data-value="262-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">보츠와나</a><a href="##" class="value"
+															data-value="232-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">볼리비아</a><a href="##" class="value"
+															data-value="263-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">부룬디</a><a href="##" class="value"
+															data-value="263-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">부르키나파소</a><a href="##"
+															class="value" data-value="212-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">부탄</a><a href="##" class="value"
+															data-value="229-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">북·중미기타</a><a href="##"
+															class="value" data-value="252-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">북마리아나군도</a><a href="##"
+															class="value" data-value="212-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">북한</a><a href="##" class="value"
+															data-value="243-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">불가리아</a><a href="##" class="value"
+															data-value="230-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">브라질</a><a href="##" class="value"
+															data-value="212-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">브루나이</a><a href="##" class="value"
+															data-value="250-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">사모아</a><a href="##" class="value"
+															data-value="210-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">사우디아라비아</a><a href="##"
+															class="value" data-value="221-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">사이판</a><a href="##" class="value"
+															data-value="245-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">산마리노</a><a href="##" class="value"
+															data-value="265-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">상투메프린시페</a><a href="##"
+															class="value" data-value="263-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">세네갈</a><a href="##" class="value"
+															data-value="245-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">세르비아</a><a href="##" class="value"
+															data-value="263-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">세이셀제도</a><a href="##"
+															class="value" data-value="221-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">세인트루시아</a><a href="##"
+															class="value" data-value="221-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">세인트빈센트그레나딘즈</a><a href="##"
+															class="value" data-value="221-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">세인트키츠네비스</a><a href="##"
+															class="value" data-value="220-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">세인트피에르미그온</a><a href="##"
+															class="value" data-value="263-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">세인트헬레나섬</a><a href="##"
+															class="value" data-value="263-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">소말리아</a><a href="##" class="value"
+															data-value="251-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">솔로몬제도</a><a href="##"
+															class="value" data-value="260-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">수단</a><a href="##" class="value"
+															data-value="232-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">수리남</a><a href="##" class="value"
+															data-value="210-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">스리랑카</a><a href="##" class="value"
+															data-value="263-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">스와질랜드</a><a href="##"
+															class="value" data-value="240-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">스웨덴</a><a href="##" class="value"
+															data-value="240-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">스위스</a><a href="##" class="value"
+															data-value="241-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">스페인</a><a href="##" class="value"
+															data-value="243-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">슬로바키아</a><a href="##"
+															class="value" data-value="243-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">슬로베니아</a><a href="##"
+															class="value" data-value="212-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">시리아</a><a href="##" class="value"
+															data-value="263-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">시에라리온</a><a href="##"
+															class="value" data-value="244-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">신유고연방</a><a href="##"
+															class="value" data-value="210-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">싱가포르</a><a href="##" class="value"
+															data-value="213-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">아랍에미레이트연합국</a><a href="##"
+															class="value" data-value="243-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">아루바</a><a href="##" class="value"
+															data-value="214-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">아르메니아</a><a href="##"
+															class="value" data-value="230-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">아르헨티나</a><a href="##"
+															class="value" data-value="219-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">아시아·중동기타</a><a href="##"
+															class="value" data-value="243-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">아이슬란드</a><a href="##"
+															class="value" data-value="232-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">아이티</a><a href="##" class="value"
+															data-value="243-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">아일랜드</a><a href="##" class="value"
+															data-value="214-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">아제르바이잔</a><a href="##"
+															class="value" data-value="213-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">아프가니스탄</a><a href="##"
+															class="value" data-value="269-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">아프리카기타</a><a href="##"
+															class="value" data-value="232-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">안길라</a><a href="##" class="value"
+															data-value="244-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">안도라</a><a href="##" class="value"
+															data-value="243-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">알바니아</a><a href="##" class="value"
+															data-value="263-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">알제리</a><a href="##" class="value"
+															data-value="264-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">앙골라</a><a href="##" class="value"
+															data-value="265-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">에리트레아</a><a href="##"
+															class="value" data-value="244-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">에스토니아</a><a href="##"
+															class="value" data-value="230-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">에콰도르</a><a href="##" class="value"
+															data-value="260-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">에티오피아</a><a href="##"
+															class="value" data-value="232-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">엔티가바부다</a><a href="##"
+															class="value" data-value="232-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">엘살바도르</a><a href="##"
+															class="value" data-value="241-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">영국</a><a href="##" class="value"
+															data-value="213-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">영국령 인도양식민지</a><a href="##"
+															class="value" data-value="213-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">예멘</a><a href="##" class="value"
+															data-value="213-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">오만</a><a href="##" class="value"
+															data-value="259-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">오세아니아기타</a><a href="##"
+															class="value" data-value="244-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">오스트리아</a><a href="##"
+															class="value" data-value="230-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">온두라스</a><a href="##" class="value"
+															data-value="213-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">요르단</a><a href="##" class="value"
+															data-value="261-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">우간다</a><a href="##" class="value"
+															data-value="230-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">우루과이</a><a href="##" class="value"
+															data-value="213-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">우즈베키스탄</a><a href="##"
+															class="value" data-value="244-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">우크라이나</a><a href="##"
+															class="value" data-value="249-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">유럽기타</a><a href="##" class="value"
+															data-value="213-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">이라크</a><a href="##" class="value"
+															data-value="213-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">이란</a><a href="##" class="value"
+															data-value="244-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">이스라엘</a><a href="##" class="value"
+															data-value="261-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">이집트</a><a href="##" class="value"
+															data-value="241-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">이탈리아</a><a href="##" class="value"
+															data-value="211-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">인도</a><a href="##" class="value"
+															data-value="211-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">인도네시아</a><a href="##"
+															class="value" data-value="211-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">일본</a><a href="##" class="value"
+															data-value="264-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">자마이카</a><a href="##" class="value"
+															data-value="264-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">자이르</a><a href="##" class="value"
+															data-value="264-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">잠비아</a><a href="##" class="value"
+															data-value="264-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">적도기니</a><a href="##" class="value"
+															data-value="211-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">중국.홍콩</a><a href="##"
+															class="value" data-value="264-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">중앙아프리카공화국</a><a href="##"
+															class="value" data-value="264-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">지부티</a><a href="##" class="value"
+															data-value="244-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">지브롤터</a><a href="##" class="value"
+															data-value="264-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">짐바브웨</a><a href="##" class="value"
+															data-value="264-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">차드</a><a href="##" class="value"
+															data-value="241-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">체코</a><a href="##" class="value"
+															data-value="230-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">칠레</a><a href="##" class="value"
+															data-value="264-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">카메룬</a><a href="##" class="value"
+															data-value="265-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">카보베르데</a><a href="##"
+															class="value" data-value="213-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">카자흐스탄</a><a href="##"
+															class="value" data-value="214-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">카타르</a><a href="##" class="value"
+															data-value="211-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">캄보디아</a><a href="##" class="value"
+															data-value="220-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">캐나다</a><a href="##" class="value"
+															data-value="261-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">케냐</a><a href="##" class="value"
+															data-value="233-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">케이만제도</a><a href="##"
+															class="value" data-value="265-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">케이프버드</a><a href="##"
+															class="value" data-value="265-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">코모로</a><a href="##" class="value"
+															data-value="221-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">코스타리카</a><a href="##"
+															class="value" data-value="263-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">코트디브아르</a><a href="##"
+															class="value" data-value="230-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">콜롬비아</a><a href="##" class="value"
+															data-value="265-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">콩고</a><a href="##" class="value"
+															data-value="265-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">콩고민주공화국</a><a href="##"
+															class="value" data-value="231-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">쿠바</a><a href="##" class="value"
+															data-value="214-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">쿠웨이트</a><a href="##" class="value"
+															data-value="251-000"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">쿠크 군도</a><a href="##"
+															class="value" data-value="244-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">크로아티아</a><a href="##"
+															class="value" data-value="214-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">키르기즈스탄</a><a href="##"
+															class="value" data-value="251-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">키리바시</a><a href="##" class="value"
+															data-value="244-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">키프로스</a><a href="##" class="value"
+															data-value="214-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">타지키스탄</a><a href="##"
+															class="value" data-value="261-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">탄자니아</a><a href="##" class="value"
+															data-value="211-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">태국</a><a href="##" class="value"
+															data-value="233-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">터크스앤카이코스제도</a><a href="##"
+															class="value" data-value="241-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">터키</a><a href="##" class="value"
+															data-value="265-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">토고</a><a href="##" class="value"
+															data-value="251-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">토켈라우제도</a><a href="##"
+															class="value" data-value="251-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">통가</a><a href="##" class="value"
+															data-value="214-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">투르크메니스탄</a><a href="##"
+															class="value" data-value="251-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">투발루</a><a href="##" class="value"
+															data-value="261-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">튀니지</a><a href="##" class="value"
+															data-value="233-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">트리니나드토바고</a><a href="##"
+															class="value" data-value="231-100"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">파나마</a><a href="##" class="value"
+															data-value="233-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">파라과이</a><a href="##" class="value"
+															data-value="214-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">파키스탄</a><a href="##" class="value"
+															data-value="250-300"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">파푸아뉴기니</a><a href="##"
+															class="value" data-value="251-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">팔라우</a><a href="##" class="value"
+															data-value="244-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">페로제도</a><a href="##" class="value"
+															data-value="231-200"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">페루</a><a href="##" class="value"
+															data-value="241-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">포르투갈</a><a href="##" class="value"
+															data-value="233-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">포클랜드제도</a><a href="##"
+															class="value" data-value="241-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">폴란드</a><a href="##" class="value"
+															data-value="251-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">폴리네시아제도</a><a href="##"
+															class="value" data-value="233-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">푸에르토리코</a><a href="##"
+															class="value" data-value="241-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">프랑스</a><a href="##" class="value"
+															data-value="250-400"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">피지</a><a href="##" class="value"
+															data-value="241-800"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">핀란드</a><a href="##" class="value"
+															data-value="211-600"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">필리핀</a><a href="##" class="value"
+															data-value="251-700"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">핏케언제도</a><a href="##"
+															class="value" data-value="241-900"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">헝가리</a><a href="##" class="value"
+															data-value="250-500"
+															onclick="addressControl.selectOversea(this);"
+															onblur="setLogScript('com-address', 'address');"
+															style="z-index: 10000">호주</a> <input type="hidden"
+															class="_overseas" id="overseas" value="">
+													</span>
+													</span>
+												</div>
+											</div>
+											<div class="agree_selective_info adress">
+												<label for="check_global" class="check_custom check_off"><input
+													type="checkbox" name="global" id="check_global" value=""></label>
+												<span class="clickable">해외 지역</span>
+											</div>
+											<p class="alert_column warning_txt" id="msg_addr">&nbsp;</p>
+										</li>
+										<li class="item"><label for="address_sebu"
+											class="tit_inp">상세주소</label> <input type="text"
+											id="address_sebu" name="address_sebu" class="" maxlength="50"
+											style="ime-mode: active" placeholder="상세 주소" readonly>
+											<div class="agree_selective_info">
+												<label for="agreeSelectiveAddress"
+													class="check_custom check_off"
+													id="agreeSelectiveAddress_label" on><input
+													type="checkbox" id="agreeSelectiveAddress"
+													onchange="set_agree_selective_address();"></label> <span
+													class="clickable">선택항목수집동의</span>
+
+												<div id="collectionBasisContentsAddress"
+													class="layer_speech_burble style2" style="display: none;">
+													<button type="button" class="btn_close_layer">레이어
+														닫기</button>
+													<p>
+														주소를 등록하려면,<br>선택항목 수집에 동의하여야 합니다.
+													</p>
+												</div>
+											</div> <input type="hidden" name="address_details" value=""
+											id="address_details"></li>
+									</ul>
+								</div>
+
+							</div>
+							<!-- //초간단인증 -->
+
+							<!-- 약관동의 -->
+							<!-- <h3 class="tit_join_member" id="person_terms_title">
+								<span class="terms_agree">약관 동의</span>
+							</h3>
+							<div class="cont_division">
+								<ul class="agree_article">
+									<li class="end">
+										<div class="check_mail">
+											<strong class="anterior_txt">전체동의</strong>
+										</div> <label for="agreeAllPersonal"
+										class="check_custom check_all check_off"><input
+											type="checkbox" id="agreeAllPersonal"></label> <input
+										type="hidden" name="hidden_check_all" value="0"
+										id="hidden_check_all">
+									</li>
+								</ul>
+								<ul class="agree_article depth2">
+									<li>
+										<div class="agree_desc">
+											<strong class="caution_txt left">(필수)</strong> <strong
+												class="anterior_txt">개인회원 약관에 동의</strong>
+										</div> <a href="/zf_user/help/terms-of-service/person"
+										class="view_indetail" target="_blank">상세보기</a> <label
+										for="agree_rule1" class="check_custom check_off"><input
+											type="checkbox" id="agree_rule1"></label>
+									</li>
+
+									<li>
+										<div class="agree_desc">
+											<strong class="caution_txt left">(필수)</strong> <strong
+												class="anterior_txt">개인정보 수집 및 이용에 동의</strong>
+										</div> <a id="popupClausePrivacyPerson"
+										href="/zf_user/popup/clause-privacy?highlight=collectionAccess"
+										class="view_indetail popup_clause_open" target="_blank">상세보기</a>
+										<label for="agree_take1" class="check_custom check_off"><input
+											type="checkbox" id="agree_take1"></label>
+									</li>
+
+									<li>
+										<div class="agree_desc">
+											<strong class="desc_txt left">(선택)</strong> <strong
+												class="anterior_txt">개인정보 수집 및 이용에 동의</strong>
+										</div> <a id="popupClausePrivacyPerson2"
+										href="/zf_user/popup/clause-privacy?highlight=collectionAccess2"
+										class="view_indetail popup_clause_open" target="_blank">상세보기</a>
+										<label for="personal_info_fl" class="check_custom check_off"><input
+											type="checkbox" name="personal_info_fl" id="personal_info_fl"
+											value="y"></label>
+									</li>
+
+									<li>
+										<div class="agree_desc">
+											<strong class="desc_txt left">(선택)</strong> <strong
+												class="anterior_txt">마케팅 정보 수신 동의 - 이메일</strong>
+										</div> <a id="popupTermsAgreeLb"
+										href="/zf_user/popup/clause-privacy?highlight=collectionAccessMarketing"
+										class="view_indetail popup_clause_open" target="_blank">상세보기</a>
+										<label for="termsAgree" id="termsAgreeLb"
+										class="check_custom check_mail check_off"><input
+											type="checkbox" id="termsAgree"></label>
+									</li>
+
+									<li>
+										<div class="agree_desc">
+											<strong class="desc_txt left">(선택)</strong> <strong
+												class="anterior_txt">마케팅 정보 수신 동의 - SMS/MMS</strong>
+										</div> <a id="popupSmsReceive"
+										href="/zf_user/popup/clause-privacy?highlight=collectionAccessMarketing&highlight2=sms"
+										class="view_indetail popup_clause_open" target="_blank">상세보기</a>
+										<label for="sms_receive_fl" class="check_custom check_off"><input
+											type="checkbox" id="sms_receive_fl" name="sms_receive_fl"
+											value="y"></label>
+									</li>
+
+									<li class="">
+										<div class="agree_desc">
+											<strong class="anterior_txt">개인정보 제 3자 제공 및 위탁사항
+												이용약관</strong>
+										</div> <a id="popupClauseThirdPartyPerson"
+										href="/zf_user/popup/clause-privacy?highlight=thirdParty&open_page=join"
+										class="view_indetail popup_clause_open" target="_blank">상세보기</a>
+									</li>
+								</ul>
+							</div>
+							<div class="cont_division dormancy_term">
+								<strong class="tit_input">정보보유기간</strong>
+								<button type="button" class="btn_guide"
+									onmouseover="document.getElementById('dormancyTermTip').style.display='block';"
+									onmouseout="document.getElementById('dormancyTermTip').style.display='none';"
+									style="cursor: pointer">
+									<span class="blind">정보보유기간 설명</span>
+								</button>
+								<div id="dormancyTermTip" class="sri_tooltip size_join"
+									style="display: none; margin: 9px 0 0 91px;">
+									<span class="tail_top_left"></span>
+									<div class="tooltip_inner txt_left">
+										<p class="txt">
+											선택하신 기간 동안 사이트에 로그인하지 않은 경우<br> 개인정보를 별도 분리 저장하게 됩니다.
+										</p>
+									</div>
+								</div>
+								<div class="sri_radio_wrap">
+									<label class="sri_check sri_radio" for="dormancy_term_1">
+										<input type="radio" id="dormancy_term_1" class="inp_check"
+										name="dormancy_term" value="1"> <span
+										class="txt_check">1년</span>
+									</label> <label class="sri_check sri_radio" for="dormancy_term_2">
+										<input type="radio" id="dormancy_term_2" class="inp_check"
+										name="dormancy_term" value="3"> <span
+										class="txt_check">3년</span>
+									</label> <label class="sri_check sri_radio" for="dormancy_term_3">
+										<input type="radio" id="dormancy_term_3" class="inp_check"
+										name="dormancy_term" value="5"> <span
+										class="txt_check">5년</span>
+									</label> <label class="sri_check sri_radio" for="dormancy_term_4">
+										<input type="radio" id="dormancy_term_4" class="inp_check"
+										name="dormancy_term" value="99"> <span
+										class="txt_check">탈퇴시</span>
+									</label>
+								</div>
+							</div> -->
+							<!-- //약관동의 -->
+
+							<div class="btn_join">
+								<button type="button" id="submit" class="inp_join">회원가입
+									완료</button>
+							</div>
+							<div class="member_nudge" id="p_member_nudge">
+								<h4 class="blind">이미 가입된 정보창</h4>
+								<div class="nudge_wrap">
+									<div class="txt_overlap">
+										<p class="txt">이미 가입된 정보입니다.</p>
+										<span>아이디 :</span> <strong id="p_already_id">&nbsp;</strong>
+									</div>
+									<div class="btn_area">
+										<a href="https://www.saramin.co.kr/zf_user/helpdesk/idpw-find"
+											class="btn_type_check btn_basic_type01">아이디/비밀번호 찾기</a> <a
+											href="https://www.saramin.co.kr/zf_user/auth"
+											class="btn_type_check btn_basic_type05">로그인</a>
+									</div>
+								</div>
+								<p class="close_area">
+									<a href="javascript:" class="close_btn"><span>닫기</span></a>
+								</p>
+							</div>
+
+						</fieldset>
+					</form>
+					<!-- WMG-12981 s -->
+					<div class="layer_identify" id="layer_pop_byemail">
+						<h4>이메일 인증</h4>
+						<button type="button" class="btn_layer_close"
+							onclick="confirm_layer_close(this);">
+							<span>닫기</span>
+						</button>
+						<div class="box_txt_identify">
+							<p class="txt" id="email_layer_sub_title"
+								name="email_layer_sub_title">로 인증번호가 발송되었습니다.</p>
+						</div>
+						<input type="hidden" name="mail_confirm_complete" value=""
+							id="mail_confirm_complete">
+						<table class="tbl_fieldset">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 130px;">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>인증번호</th>
+									<td><input type="text" id="email_code" name="email_code"
+										value="" class="sri_input" style="width: 96px;">
+										<button type="button"
+											class="btn_basic_type04 confirm-action person">확인</button> <span
+										class="expiredin" id="confirm_remain_mail_time_area"
+										name="confirm_remain_mail_time_area"><strong></strong></span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="txt alert_txt">
+							<p class="alert_column warning_txt" id="email_confirm_msg"
+								style="display: none;">인증번호를 입력해주세요.</p>
+						</div>
+						<div class="bottom_btn_wrap">
+							<button type="button" class="btn_basic_type01"
+								onclick="sendCodeAction();">인증번호 재발송</button>
+							<button type="button" class="btn_basic_type05"
+								onclick="changeConfirmCell('mail')">인증완료</button>
+						</div>
+					</div>
+					<div class="layer_identify" id="layer_pop_byphone">
+						<h4>휴대폰 인증</h4>
+						<button type="button" class="btn_layer_close"
+							onclick="confirm_layer_close(this);">
+							<span>닫기</span>
+						</button>
+						<div class="box_txt_identify">
+							<p class="txt" id="sms_layer_sub_title"
+								name="sms_layer_sub_title">휴대폰 번호로 발송된 인증번호를 입력해주세요.</p>
+						</div>
+						<input type="hidden" name="sms_confirm_complete" value=""
+							id="sms_confirm_complete">
+						<table class="tbl_fieldset">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 130px;">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>인증번호</th>
+									<td><input type="text" id="sms_code" name="sms_code"
+										value="" class="sri_input" style="width: 96px;">
+										<button type="button"
+											class="btn_basic_type04 confirm-action person">확인</button> <span
+										class="expiredin" id="confirm_remain_sms_time_area"
+										name="confirm_remain_sms_time_area"><strong></strong></span></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="txt alert_txt">
+							<p class="alert_column warning_txt" id="phone_confirm_msg"
+								style="display: none;">인증번호를 입력해주세요.</p>
+						</div>
+						<div class="bottom_btn_wrap">
+							<button type="button" class="btn_basic_type01"
+								onclick="sendCodeAction();">인증번호 재발송</button>
+							<button type="button" class="btn_basic_type05"
+								onclick="changeConfirmCell('sms')">인증완료</button>
+						</div>
+					</div>
+				</div>
+				<!-- //개인회원 -->
+
+			</div>
+			<!-- e: 콘텐츠 영역 -->
+		</div>
+	</div>
+</body>
+<script>
+
+var addressControl = (function ($) {
+var $personForm = $('#frm'),
+    $companyForm = $('#c_frm'),
+    personData = {},
+    companyData = {},
+    $frm, tempData, joinTab;
+
+
+$('#social_login').on('click', 'a', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var link =  $(e.currentTarget).attr('href'),
+        provider = $(e.currentTarget).data('provider');
+
+    if((navigator.userAgent.toLowerCase().indexOf("msie") !== -1) && provider === 'apple'){
+        if(confirm('IE10이하 버전의 인터넷 익스플로러에서는 Apple 로그인이 정상 작동하지 않을 수 있습니다.\n' +
+            '인터넷 익스플로러를 최신 버전으로 업데이트 해주세요'))
+        {
+            window.open(link, '_blank', 'width=480,height=640');
+        }
+        return;
+    }
+    window.open(link, '_blank', 'width=480,height=640');
+});
+
+
+$('.adress_column')
+    .on('change', 'input[type="checkbox"]', function () {
+
+        setFormForMemberType(this);
+
+        if ($('#agreeSelectiveAddress').length > 0 && !$('#agreeSelectiveAddress').prop('checked')) {
+            tempData.zipcode = '';
+            tempData.address = '';
+            tempData.addressDetails = '';
+            tempData.overseaDetails = '';
+        }
+
+        if ($(this).prop('checked')) {
+            tempData.zipcode = $frm.find('#zipcode').val();
+            tempData.address = $frm.find('#address').val();
+            tempData.addressDetails = $frm.find('#address_sebu').val();
+
+            $frm.find('#zipcode').val(getOverseaPost());
+            $frm.find('#address').val($frm.find('#overseas').val());
+            $frm.find('#address_sebu').val(tempData.overseaDetails != null ? tempData.overseaDetails : '');
+
+            $frm.find('.adress_domestic').hide();
+            $frm.find('.adress_global').show();
+        } else {
+            tempData.overseaDetails = $frm.find('#address_sebu').val();
+
+            $frm.find('#zipcode').val(tempData.zipcode);
+            $frm.find('#address').val(tempData.address);
+            $frm.find('#address_sebu').val(tempData.addressDetails);
+
+            $frm.find('.adress_domestic').show();
+            $frm.find('.adress_global').hide();
+        }
+
+    })
+    .on('click', '._searchArea', function () {
+        setFormForMemberType(this);
+    })
+;
+
+function setFormForMemberType(el) {
+    if ($(el).closest('form').attr('id') === 'frm') {
+        $frm = $personForm;
+        tempData = personData;
+        joinTab = 'person';
+    } else {
+        $frm = $companyForm;
+        tempData = companyData;
+        joinTab = 'company';
+    }
+}
+
+function getOverseaPost() {
+    var oversea = $frm.find('#overseas').val(),
+        zipcode = '';
+
+    $frm.find('._optionOversea a').each(function (index, el) {
+        if ($(el).html() == oversea) {
+            zipcode = $(el).data('value');
+        }
+    });
+
+    return zipcode;
+}
+
+function setAgreeSelectiveAddress() {
+    $agreeSelectiveAddress = $('#agreeSelectiveAddress');
+
+    if (!$agreeSelectiveAddress.prop('checked')) {
+        $agreeSelectiveAddress.click();
+        $agreeSelectiveAddress.closest('div').find('.btn_close_layer').click();
+    }
+}
+
+return {
+    selectOversea: function (el) {
+
+        setFormForMemberType(el);
+
+        setTimeout(function () { // select box 이벤트 동작 시간 반영을 위한 딜레이 설정
+            setAgreeSelectiveAddress();
+            $frm.find('#address').val($(el).html());
+            $frm.find('#zipcode').val(getOverseaPost());
+        }, 300);
+    }
+}
+})(jQuery);
+
+
+</script>
+</html>

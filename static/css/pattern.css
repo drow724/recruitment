@@ -1,0 +1,318 @@
+@charset "utf-8";
+
+button, label {cursor:pointer}
+/* 임시 툴팁 */
+/* .toolTipWrap 으로 감싸서 쓰면 꼬랑지 위치 및 정렬까지 */
+/* .toolTip 만 쓸떈 left, top 지정하여 사용 */
+/* 1차떄까진 클래스명에 2 를 붙여 레거시와 구분 */
+.toolTipWrap2 {position:relative}
+.toolTipWrap2:hover .toolTip2 {display:block}
+.toolTip2 {display:none;position:absolute;padding:24px;border:1px solid #edeef0;border-radius:8px;box-sizing:border-box;background:#fff;box-shadow:0 2px 20px 0 rgba(0,0,0,0.1)}
+.toolTip2 .tail {position:absolute;z-index:2;width:32px;height:32px}
+.toolTip2 .toolTipCont {white-space:nowrap}
+.toolTip2.top_center .tail,
+.toolTip2.right_center .tail,
+.toolTip2.bottom_center .tail,
+.toolTip2.left_center .tail {background:url(//www.saraminimage.co.kr/sri/person/spr/spr_tooltip_tail.png) 0 0 no-repeat}
+.toolTip2.top_right .tail,
+.toolTip2.right_bottom .tail,
+.toolTip2.bottom_left .tail,
+.toolTip2.left_top .tail {background:url(//www.saraminimage.co.kr/sri/person/spr/spr_tooltip_tail.png) -50px 0 no-repeat}
+.toolTip2.top_left .tail,
+.toolTip2.right_top .tail,
+.toolTip2.bottom_right .tail,
+.toolTip2.left_bottom .tail {background:url(//www.saraminimage.co.kr/sri/person/spr/spr_tooltip_tail.png) -100px 0 no-repeat}
+.toolTip2.top_center .tail {top:-18px;left:50%;margin-left:-16px}
+.toolTip2.right_center .tail {top:50%;right:-18px;margin-top:-16px;-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}
+.toolTip2.bottom_center .tail {bottom:-18px;left:50%;margin-left:-16px;-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}
+.toolTip2.left_center .tail {top:50%;left:-18px;margin-top:-16px;-webkit-transform:rotate(270deg);-ms-transform:rotate(270deg);transform:rotate(270deg)}
+.toolTip2.top_right .tail {top:-18px;right:-1px}
+.toolTip2.right_bottom .tail {right:-18px;bottom:-1px;-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}
+.toolTip2.bottom_left .tail {bottom:-18px;left:-1px;-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}
+.toolTip2.left_top .tail {top:-1px;left:-18px;-webkit-transform:rotate(270deg);-ms-transform:rotate(270deg);transform:rotate(270deg)}
+.toolTip2.top_left .tail {top:-18px;left:-1px;-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}
+.toolTip2.right_top .tail {top:-1px;right:-18px;-webkit-transform:rotate(270deg);-ms-transform:rotate(270deg);transform:rotate(270deg)}
+.toolTip2.bottom_right .tail {right:-1px;bottom:-18px}
+.toolTip2.left_bottom .tail {bottom:-1px;left:-18px;-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}
+.toolTipWrap2 .toolTip2.top_center {top:calc(100% + 17px);left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}
+.toolTipWrap2 .toolTip2.right_center {top:50%;right:calc(100% + 17px);-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+.toolTipWrap2 .toolTip2.bottom_center {bottom:calc(100% + 17px);left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}
+.toolTipWrap2 .toolTip2.left_center {top:50%;left:calc(100% + 17px);-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+.toolTipWrap2 .toolTip2.top_right {top:calc(100% + 17px);right:50%}
+.toolTipWrap2 .toolTip2.right_bottom {right:calc(100% + 17px);bottom:50%}
+.toolTipWrap2 .toolTip2.bottom_left {bottom:calc(100% + 17px);left:50%}
+.toolTipWrap2 .toolTip2.left_top {top:50%;left:calc(100% + 17px)}
+.toolTipWrap2 .toolTip2.top_left {top:calc(100% + 17px);left:50%}
+.toolTipWrap2 .toolTip2.right_top {top:50%;right:calc(100% + 17px)}
+.toolTipWrap2 .toolTip2.bottom_right {right:50%;bottom:calc(100% + 17px)}
+.toolTipWrap2 .toolTip2.left_bottom {bottom:50%;left:calc(100% + 17px)}
+
+/* square 버튼 */
+[class*="btnSize"] {display:inline-block;border:1px solid #4876ef;border-radius:4px;box-sizing:border-box;color:#fff;letter-spacing:-1px;text-align:center;background-color:#4876ef}
+/* square 버튼-사이즈 */
+.btnSizeXL {padding:13px 12px 17px;font-size:18px;font-weight:bold;line-height:32px}
+.btnSizeL {padding:10px 12px 12px;font-size:16px;line-height:24px}
+.btnSizeM {padding:6px 12px 8px;font-size:14px;line-height:24px}
+.btnSizeS {padding:2px 12px 4px;font-size:13px;line-height:24px}
+.btnSizeXS {padding:0 12px 1px;border-radius:2px;font-size:12px;line-height:21px}
+
+/* square 버튼-컬러 */
+[class*="btnSize"]:hover {border-color:#3157dd;background-color:#3157dd}
+[class*="btnSize"].colorBlue {border-color:#4876ef;color:#fff;background-color:#4876ef}
+[class*="btnSize"].colorBlue:hover {border-color:#3157dd;background-color:#3157dd}
+[class*="btnSize"].colorBlueReverse {border-color:#4876ef;color:#4876ef;background-color:#fff}
+[class*="btnSize"].colorBlueReverse:hover {background-color:#eff5ff}
+[class*="btnSize"].colorBlack {border-color:#373f57;color:#fff;background-color:#373f57}
+[class*="btnSize"].colorBlack:hover {border-color:#292e41;background-color:#292e41}
+[class*="btnSize"].colorGrayReverse {border-color:#d7dce5;color:#5c667b;background-color:#fff}
+[class*="btnSize"].colorGrayReverse:hover {background-color:#f4f6fa}
+[class*="btnSize"].colorWhiteOpacity {border-color:#fff;color:#fff;background-color:rgba(0, 0, 0, 0)}
+[class*="btnSize"].colorWhiteOpacity:hover {background-color:rgba(0, 0, 0, 0.2)}
+/* square 버튼-상태 */
+[class*="btnSize"][class*="color"]:disabled,
+[class*="btnSize"][class*="color"]:disabled:hover,
+[class*="btnSize"][class*="color"].disabled,
+[class*="btnSize"][class*="color"].disabled:hover {border-color:#d7dce5;color:#afbac8;background-color:#eaedf4}
+[class*="btnSize"][class*="color"]:disabled,
+[class*="btnSize"][class*="color"].disabled {cursor:default}
+
+/* text 버튼 */
+.btnText {display:inline-block;position:relative;padding:0 12px 0 0}
+.btnText>span {display:block;color:#8491a7;font-size:13px;letter-spacing:-1px;line-height:24px}
+.btnText:after {position:absolute;top:50%;right:0;margin-left:-2px;width:5px;height:5px;border-top:1px solid #96a0b5;border-right:1px solid #96a0b5;-webkit-transform:translate(-50%, -50%) rotate(45deg);-ms-transform:translate(-50%, -50%) rotate(45deg);transform:translate(-50%, -50%) rotate(45deg);content:""}
+.btnText:hover>span {color:#373f57}
+.btnText:hover:after {border-top-color:#373f57;border-right-color:#373f57}
+
+/* textarea */
+.inpTarea {position:relative}
+.inpTarea textarea {overflow-x:hidden;overflow-y:scroll;padding:16px 18px;height:calc(100% - 25px);border:1px solid #d7dce5;border-radius:4px;box-sizing:border-box;color:#373f57;font-size:14px;letter-spacing:-1px;line-height:21px;background-color:#fff;resize:none}
+.inpTarea textarea:-ms-input-placeholder {color:#8491a7}
+.inpTarea textarea::placeholder {color:#8491a7;opacity:1}
+.inpTarea textarea:focus,
+.inpTarea textarea:hover {border-color:#222}
+.inpTarea textarea:disabled,
+.inpTarea textarea:read-only {border-color:#ddd;color:#888;background-color:#efefef}
+.inpTarea textarea[disabled] {border-color:#ddd;color:#888;background-color:#efefef}
+.inpTarea textarea.invalid {border-color:#ff3b50;background-color:#fff9e5}
+.inpTarea .txtSize {display:inline-block;margin-top:2px;width:100%;color:#8491a7;font-size:12px;line-height:normal;text-align:right}
+
+/* input */
+.inpTypo2 {padding:0 12px 2px;height:40px;border:1px solid #d7dce5;border-radius:4px;box-sizing:border-box;color:#373f57;font-family:"Malgun Gothic",gulim,dotum,sans-serif;font-size:14px;letter-spacing:-1px;line-height:36px;vertical-align:middle;background-color:#fff}
+.inpTypo2::-ms-clear {display:none}
+.inpTypo2:-ms-input-placeholder {color:#8491a7;letter-spacing:-1px}
+.inpTypo2::placeholder {color:#8491a7;letter-spacing:-1px;opacity:1}
+.inpTypo2:hover {border-color:#d7dce5;background-color:#f4f6fa}
+.inpTypo2:focus {border-color:#4876ef}
+.inpTypo2.sizeS {height:32px;font-size:13px;line-height:28px}
+.inpTypo2.sizeL {height:48px;line-height:44px}
+.inpTypo2[disabled],
+.inpTypo2:disabled {border-color:#d7dce5;color:#afbac8;background-color:#eff1f5}
+.inpTypo2.invalid {border-color:#dc3434}
+.inpTypo2.active {border-color:#575d6d}
+.inpTypo2.type_calendar {padding-right:40px;width:124px;letter-spacing:0;vertical-align:top;background:url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg transform='translate(-884 -1909) translate(91 1656) translate(693 40) translate(8 205) translate(92 8)'%3E%3Crect width='14' height='13' x='1.5' y='2.5' stroke='%23CCD0D6' rx='2'/%3E%3Cpath stroke='%23CCD0D6' d='M1 6.5L16 6.5'/%3E%3Cpath stroke='%23CCD0D6' stroke-linecap='round' d='M5.5 1.5L5.5 4M11.5 1.5L11.5 4'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A") 90% 50% no-repeat}
+.inpTypo2.type_calendar:disabled,
+.inpTypo2.type_calendar[disabled] {background-color:#eff1f5}
+
+.inpTypoBtn,
+.inpTypoIco {display:inline-block;position:relative}
+.inpTypoBtn .inpTypo2 {padding-right:80px}
+.inpTypoBtn [class*="btnSize"] {position:absolute;padding:2px 0 4px;top:4px;right:4px;width:72px}
+.inpTypoIco .inpTypo2 {padding-right:40px}
+.inpTypoIco .inpTypo2.sizeL {padding-right:48px}
+.inpTypoIco .btnIco {position:absolute;top:8px;right:8px}
+.inpTypoIco .btnIco svg {width:24px;height:24px;color:#afbac8}
+.inpTypoIco .inpTypo2.sizeL+.btnIco {top:12px;right:12px}
+
+/* radio & checkbox */
+.inpRadio {display:inline-block;position:relative;vertical-align:top}
+.inpRadio>.lbl {display:inline-block;color:#3e3e4f;font-size:15px;letter-spacing:-1px;line-height:22px;vertical-align:top}
+.inpRadio>.lbl:before {float:left;margin:0 8px 0 0;width:22px;height:22px;background:url(//www.saraminimage.co.kr/sri/person/spr/inpChkRdo.png) no-repeat;content:""}
+.inpRadio>.lbl:after {display:table;clear:both;content:"";table-layout:fixed}
+.inpRadio>.lbl.hide {visibility:visible;overflow:visible;position:static;top:auto;left:auto;width:auto;height:auto;font-size:0}
+.inpRadio>.lbl.hide:before {margin:0}
+.inpRadio>.lbl.reverse:before {float:right;margin:0 0 0 8px}
+.inpRadio>input {position:absolute;top:0;width:1px;height:1px;outline:none;opacity:0;pointer-events:none}
+.inpRadio input+.lbl:before {background-position:-80px 0}
+.inpRadio>input:focus+.lbl:before {outline:5px auto -webkit-focus-ring-color;outline:1px dotted invert}
+.inpRadio>input:checked+.lbl:before {background-position:-120px 0}
+
+.inpChk2 {display:inline-block;position:relative;vertical-align:top}
+.inpChk2>.lbl {display:inline-block;color:#373f57;font-size:15px;letter-spacing:-1px;line-height:22px;vertical-align:top}
+.inpChk2>.lbl:before {float:left;margin:0 8px 0 0;width:22px;height:22px;background:url(//www.saraminimage.co.kr/sri/person/spr/inpChkRdo.png) no-repeat;content:""}
+.inpChk2>.lbl:after {display:table;clear:both;content:"";table-layout:fixed}
+.inpChk2>.lbl.hide {visibility:visible;overflow:visible;position:static;top:auto;left:auto;width:auto;height:auto;font-size:0}
+.inpChk2>.lbl.hide:before {margin:0}
+.inpChk2>.lbl.reverse:before {float:right;margin:0 0 0 8px}
+.inpChk2>input {position:absolute;top:0;width:1px;height:1px;outline:none;opacity:0;pointer-events:none}
+.inpChk2 input+.lbl:before {background-position:0 0}
+.inpChk2>input:focus+.lbl:before {outline:5px auto -webkit-focus-ring-color;outline:1px dotted invert}
+.inpChk2>input:checked+.lbl:before {background-position:-40px 0}
+.inpChk2>input:disabled:checked+.lbl:before {background-position:0 -40px}
+.inpChk2>input:disabled+.lbl:before {background-position:-40px -40px}
+.inpRdo2 {display:inline-block;position:relative;vertical-align:top}
+.inpRdo2>.lbl {display:inline-block;color:#3e3e4f;font-size:15px;letter-spacing:-1px;line-height:22px;vertical-align:top}
+.inpRdo2>.lbl:before {float:left;margin:0 8px 0 0;width:22px;height:22px;background:url(//www.saraminimage.co.kr/sri/person/spr/inpChkRdo.png) no-repeat;content:""}
+.inpRdo2>.lbl:after {display:table;clear:both;content:"";table-layout:fixed}
+.inpRdo2>.lbl.hide {visibility:visible;overflow:visible;position:static;top:auto;left:auto;width:auto;height:auto;font-size:0}
+.inpRdo2>.lbl.hide:before {margin:0}
+.inpRdo2>.lbl.reverse:before {float:right;margin:0 0 0 8px}
+.inpRdo2>input {position:absolute;top:0;width:1px;height:1px;outline:none;opacity:0;pointer-events:none}
+.inpRdo2 input+.lbl:before {background-position:-80px 0}
+.inpRdo2>input:focus+.lbl:before {outline:5px auto -webkit-focus-ring-color;outline:1px dotted invert}
+.inpRdo2>input:checked+.lbl:before {background-position:-120px 0}
+
+/* TAB */
+.tabWrap {padding:50px 0 20px}
+.tabWrap:after {display:table;clear:both;content:"";table-layout:fixed}
+.tabWrap li {float:left;padding-right:20px}
+.tabWrap .tab {display:block;padding:10px 20px 10px 0;color:#8491a7;font-size:20px;font-weight:bold;letter-spacing:-1px;line-height:27px}
+.tabWrap .tab .badge {display:inline-block;margin:0 0 0 8px;padding:0 12px 0 13px;min-width:36px;height:28px;border-radius:14px;box-sizing:border-box;color:#fff;font-size:18px;letter-spacing:0;vertical-align:top;background:#96a0b5}
+.tabWrap .tab:hover {color:#5c667b}
+.tabWrap .tab:hover .badge {background:#5c667b}
+.tabWrap .select .tab {color:#373f57}
+.tabWrap .select .badge,
+.tabWrap .select:hover .badge {background:#373f57}
+
+/* Table */
+.tblWrap2 {border-top:1px solid #dcdee3}
+.tblWrap2 table {width:100%;border-spacing:0;border-collapse:collapse;table-layout:fixed}
+.tblWrap2 th,
+.tblWrap2 td {margin:0;border-bottom:1px solid #ebedf2;box-sizing:border-box;font-size:14px;letter-spacing:-1px;line-height:16px;text-align:center;word-wrap:break-word;word-break:break-all}
+.tblWrap2 th {padding:19px 15px 19px;color:#373f57;font-weight:bold}
+.tblWrap2 td {padding:24px 15px 23px;color:#5c667b}
+.tblWrap2 .ellipsis {overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tblWrap2 .txtLeft {text-align:left}
+.tblWrap2 .txtRight {text-align:right}
+.tblWrap2 .txtTop {vertical-align:top}
+
+/* pagination */
+.pagination2 {margin:40px 0 80px !important;font-size:0;letter-spacing:-1px;text-align:center}
+.pagination2 .btnPrev,
+.pagination2 .btnNext {display:inline-block;position:relative;width:auto !important;height:32px !important;border:0;box-sizing:border-box;color:#96a0b5 !important;font-size:14px;line-height:32px;text-decoration:none;vertical-align:middle;background:none !important}
+.pagination2 .btnPrev:after,
+.pagination2 .btnNext:after {position:absolute;top:50%;z-index:2;width:5px;height:5px;border:solid currentColor;-webkit-transform:translate(-50%, -50%) scale(1.1428571429, 1) rotate(45deg);-ms-transform:translate(-50%, -50%) scale(1.1428571429, 1) rotate(45deg);transform:translate(-50%, -50%) scale(1.1428571429, 1) rotate(45deg);content:""}
+.pagination2 .btnPrev {margin-right:12px !important;padding:0 10px 0 14px !important}
+.pagination2 .btnPrev:after {left:5px;border-width:0 0 1px 1px}
+.pagination2 .btnNext {margin-left:12px !important;padding:0 14px 0 10px !important}
+.pagination2 .btnNext:after {right:0;border-width:1px 1px 0 0}
+.pagination2 .page {display:inline-block;margin-right:4px !important;padding:0 2px;min-width:32px;height:32px;border:1px solid transparent !important;border-radius:4px;box-sizing:border-box;color:#8491a7 !important;font-size:14px;line-height:30px;vertical-align:middle;background:#fff}
+.pagination2 .page:hover {border-color:#d7dce5 !important}
+.pagination2 span.page,
+.pagination2 span.page:hover {border-color:#5c667b !important;color:#5c667b !important;font-size:14px;font-weight:bold}
+.pagination2 .btnPrev:hover,
+.pagination2 .btnNext:hover {color:#57667b !important}
+
+/* notation */
+.wrap_notation {position:relative;padding:32px 32px 32px 210px;border-radius:16px;font-size:0;letter-spacing:-1px;background:#f4f6fa}
+.wrap_notation .title_notation {position:absolute;top:32px;left:32px;padding:0 0 0 39px;width:178px;box-sizing:border-box;color:#8491a7;font-size:14px;font-weight:bold;line-height:17px}
+.wrap_notation .title_notation:before {position:absolute;top:1px;left:0;width:20px;height:20px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cg transform='translate(-488 -2372) translate(456 1409) translate(32 963)' fill='none' fill-rule='evenodd'%3E%3Ccircle cx='10' cy='10' r='9.1' stroke='%239AA0AA' stroke-width='1.8'/%3E%3Cpath fill='%239AA0AA' fill-rule='nonzero' d='M10 5c.69 0 1.25.56 1.25 1.25S10.69 7.5 10 7.5s-1.25-.56-1.25-1.25S9.31 5 10 5'/%3E%3Cpath stroke='%239AA0AA' stroke-width='2' d='M10 9.2L10 15'/%3E%3C/g%3E%3C/svg%3E%0A") 0 0 no-repeat;content:""}
+.wrap_notation .notation {min-height:34px}
+.wrap_notation .notation .list>li {display:block;position:relative;padding-left:8px;color:#8491a7;font-size:13px;line-height:22px}
+.wrap_notation .notation .list>li:before {position:absolute;top:0;left:0;font-weight:bold;line-height:22px;content:"·"}
+
+/* select */
+.inpSel2 {display:inline-block;border-radius:5px;vertical-align:middle}
+.inpSel2>select {padding:2px 36px 4px 12px;width:100%;min-width:80px;height:40px;border:1px solid #d7dce5;border-radius:4px;box-sizing:border-box;color:#5c667b;font-size:14px;letter-spacing:-1px;line-height:32px;text-align:left;vertical-align:top;background:#fff url(//www.saraminimage.co.kr/sri/person/bg/bg_select_default.png) no-repeat right 12px top 50%;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;}
+.inpSel2>select:hover {background-color:#f4f6fa}
+.inpSel2.sizeS>select {padding-top:2px;padding-bottom:4px;height:32px;line-height:24px}
+.inpSel2.sizeL>select {padding:12px 40px 14px 12px;height:64px;font-size:16px;letter-spacing:-1px;background-image:url(//www.saraminimage.co.kr/sri/person/bg/bg_select_sizeL.png);background-position:right 12px top 50%}
+.inpSel2>select:disabled {color:#afbac8;background-color:#eaedf4;cursor:default}
+.inpSel2>select[disabled] {color:#afbac8;background-color:#eaedf4;cursor:default}
+.inpSel2 select:disabled::-ms-value {color:#9aa0aa}
+.inpSel2.invalid>select {border-color:#f76da0}
+.inpSel2>select::-ms-expand {opacity:0}
+.inpSel2>select {padding:2px 14px 4px 10px\0}
+
+/* select text type */
+.inpSelTxt2 {padding-right:24px;height:18px;border:0;box-sizing:border-box;color:#9aa0aa;font-family:"Malgun Gothic",gulim,dotum,sans-serif;font-size:14px;line-height:18px;letter-spacing:-1px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath stroke='%23D7DCE5' d='M159 .5c.966 0 1.841.392 2.475 1.025.633.634 1.025 1.509 1.025 2.475h0v32c0 .966-.392 1.841-1.025 2.475-.634.633-1.509 1.025-2.475 1.025h0H4c-.966 0-1.841-.392-2.475-1.025C.892 37.84.5 36.966.5 36h0V4c0-.966.392-1.841 1.025-2.475C2.16.892 3.034.5 4 .5h0z' transform='translate(-1078 -970) translate(460 907) translate(479) translate(0 46)'/%3E%3Cg fill='%23D7DCE5'%3E%3Cpath d='M2 4L10 4 6 9z' transform='translate(-1078 -970) translate(460 907) translate(479) translate(0 46) translate(139 17)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A") no-repeat 100% center;-webkit-appearance:none;-moz-appearance:none;cursor:pointer}
+.inpSelTxt2::-ms-expand {opacity:0}
+.inpSelTxt2 {padding:0\0}
+
+/* ie9,10,11 */
+.inpSel2>select::-ms-expand,
+select.inpSelTxt2::-ms-expand {opacity:0}
+.inpSel2>select {padding:8px 12px 9px\0/}  /* ie9 */
+.inpSel2.sizeL>select {padding:12px 14px 14px 12px\0/}  /* ie9 */
+.inpSel2.sizeS>select {padding:4px 12px 5px\0/}  /* ie9 */
+_:-ms-lang(x), .inpSel2>select {padding:9px 12px 10px}  /* ie10 */
+_:-ms-lang(x), .inpSel2.sizeL>select {padding:13px 12px 15px}  /* ie10 */
+_:-ms-lang(x), .inpSel2.sizeS>select {padding:5px 12px 6px}  /* ie10 */
+_:-ms-fullscreen, :root .inpSel2>select {padding:9px 12px 10px}  /* ie11 */
+_:-ms-fullscreen, :root .inpSel2.sizeL>select {padding:13px 12px 15px}  /* ie11 */
+_:-ms-fullscreen, :root .inpSel2.sizeS>select {padding:5px 12px 6px}  /* ie11 */
+select.inpSelTxt2 {padding:0\0/;height:20px\0/}  /* ie9 */
+_:-ms-lang(x), select.inpSelTxt2 {padding:0;height:20px\0/}  /* ie10 */
+_:-ms-fullscreen, :root select.inpSelTxt2 {padding:0}  /* ie11 */
+
+.inpSelBox {display:inline-block;position:relative;vertical-align:middle}
+.inpSelBox .selBtn {overflow:hidden;padding:6px 29px 8px 41px;width:100%;min-width:163px;border:1px solid #d7dce5;border-radius:4px;box-sizing:border-box;color:#5c667b;font-size:14px;letter-spacing:-1px;line-height:24px;text-align:left;text-overflow:ellipsis;white-space:nowrap;background:#fff url(//www.saraminimage.co.kr/sri/person/bg/bg_select_default.png) no-repeat right 12px top 50%}
+.inpSelBox .selBtn:hover {background-color:#f4f6fa}
+.inpSelBox .selBtn svg {display:inline-block;position:absolute;top:7px;left:8px;width:24px;height:24px;color:#96a0b5}
+.inpSelBox .listOpt {display:none;overflow-y:auto;position:absolute;top:48px;left:0;padding:8px 0;min-width:100%;max-height:390px;border:1px solid #d7dce5;border-radius:4px;background-color:#fff;box-shadow:2px 6px 16px 0 rgba(17, 42, 128, 0.08);}
+.inpSelBox .listOpt li {display:inline-block;width:100%}
+.inpSelBox .listOpt li a {display:inline-block;overflow:hidden;padding:0 16px;width:100%;height:36px;box-sizing:border-box;text-align:left;text-overflow:ellipsis;white-space:nowrap;font-size:14px;letter-spacing:-1px;line-height:36px;}
+.inpSelBox .listOpt li a:hover {background-color:#f4f6fa}
+.inpSelBox .selBtn.on+.listOpt {display:inline-block}
+.inpSelBox.disabled:after {display:inline-block;position:absolute;left:0;right:0;top:0;bottom:0;z-index:1;content:""}
+.inpSelBox.disabled .selBtn {background-color:#eaedf4;border-color:#eaedf4;color:#afbac8}
+
+/* toggle - on/off */
+.inpChkSw2 {display:inline-block;position:relative;}
+.inpChkSw2 input {clip:rect(1px, 1px, 1px, 1px);position:absolute;width:1px;height:1px}
+.inpChkSw2 .lbl {position:relative;padding-right:40px;color:#5c667b;font-size:14px;line-height:16px}
+.inpChkSw2 .lbl:before {position:absolute;top:50%;right:0;margin-top:-8px;width:32px;height:16px;border-radius:9px;background:#eff1f5;content:""}
+.inpChkSw2 .lbl:after {position:absolute;top:50%;right:16px;margin-top:-8px;width:16px;height:16px;border-radius:50%;box-sizing:border-box;background:#d8d8d8;transition-timing-function:linear;transition-duration:0.15s;transition-property:right, background;content:""}
+.inpChkSw2 input:checked+.lbl:after {right:0;background:#4876ef}
+.inpChkSw2 .lbl.reverse {padding-right:0;padding-left:38px}
+.inpChkSw2 .lbl.reverse:before {left:0}
+.inpChkSw2 .lbl.reverse:after {right:initial;left:0;transition-property:left, background}
+.inpChkSw2 input:checked+.lbl.reverse:after {left:16px;background:#4876ef}
+
+/* Popup(Layer) */
+/* modal */
+.sri_dimmed {overflow:auto;position:fixed;top:0;left:0;z-index:105;width:100%;height:100%;background:rgba(0,0,0,0.5)} /* 2021-09-07 z-index 값 IA보다 높게 수정 - 취준진담 */
+.modalWrap {display:none;position:fixed;top:50%;left:50%;z-index:110;padding:40px;border-radius:16px;box-sizing:border-box;letter-spacing:-1px;background-color:#fff;box-shadow:0 0 5px 0 rgba(0,0,0,0.15);}
+.modalWrap.show {display:block;}
+.modalWrap>.title {margin-bottom:24px;color:#373f57;font-size:22px;font-weight:bold;line-height:normal}
+.modalWrap>.title .txt {display:block;margin-top:6px;color:#96a0b5;font-size:14px;font-weight:normal;line-height:22px}
+.modalWrap .alertCont {font-size:18px;text-align:center;line-height:26px;letter-spacing:-1px;color:#373f57}
+.modalWrap .btnClose {position:absolute;top:20px;right:20px}
+.modalWrap .btnClose:after {display:block;width:20px;height:20px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ADBACA' fill-rule='nonzero'%3E%3Cpath d='M9.546 -0.354L10.253 0.354 0.354 10.253 -0.354 9.546z' transform='translate(-1272 -428) translate(750 402) translate(523 27)'/%3E%3Cpath d='M0.354 -0.354L10.253 9.546 9.546 10.253 -0.354 0.354z' transform='translate(-1272 -428) translate(750 402) translate(523 27)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A") no-repeat center center;content:""}
+.modalWrap .btnClose:hover:after {background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23373F57' fill-rule='nonzero'%3E%3Cpath d='M9.546 -0.354L10.253 0.354 0.354 10.253 -0.354 9.546z' transform='translate(-1272 -428) translate(750 402) translate(523 27)'/%3E%3Cpath d='M0.354 -0.354L10.253 9.546 9.546 10.253 -0.354 0.354z' transform='translate(-1272 -428) translate(750 402) translate(523 27)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A")}
+.modalWrap .bottom_btn_wrap {margin-top:24px;font-size:0;text-align:center}
+.modalWrap .bottom_btn_wrap button {margin:0 4px;min-width:100px;}
+
+/* 입사지원 버튼 */
+.sri_btn_lg {overflow:hidden;margin:0;padding:0;width:212px;height:60px;border:0;box-sizing:border-box;text-align:center;vertical-align:top;cursor:pointer}
+.sri_btn_lg span {display:inline-block;width:210px;height:58px;border:1px solid #dce2ef;color:#8a92a6;font-family:"Malgun Gothic",sans-serif !important;font-size:20px !important;font-weight:bold;letter-spacing:-2px;line-height:54px;background:#fff}
+.sri_btn_lg span.sri_btn_immediately {position:relative;border:1px solid #ff5656;color:#dc3434}
+.sri_btn_ml {overflow:hidden;margin:0;padding:0;width:120px;height:40px;border:0;box-sizing:border-box;text-align:center;vertical-align:top;cursor:pointer}
+.sri_btn_ml span {display:inline-block;width:118px;height:38px;border:1px solid #d7dce5;border-radius:4px;color:#5c667b;font-family:"Malgun Gothic",sans-serif !important;font-size:14px !important;letter-spacing:-1px;line-height:36px;background:#fff}
+.sri_btn_ml span.sri_btn_immediately {position:relative;border:1px solid #ff5656;color:#dc3434}
+.sri_btn_ml:hover span {background:#f4f6fa}
+.sri_btn_ml:hover span.sri_btn_immediately {background:#fef3f3}
+.sri_btn_md {overflow:hidden;margin:0;padding:0;width:106px;height:32px;border:0;box-sizing:border-box;text-align:center;vertical-align:top;cursor:pointer}
+.sri_btn_md span {display:inline-block;width:104px;height:30px;border:1px solid #d7dce5;border-radius:4px;color:#5c667b;font-family:"Malgun Gothic",sans-serif !important;font-size:14px !important;letter-spacing:-1px;line-height:28px;background:#fff}
+.sri_btn_md span.sri_btn_immediately {position:relative;border:1px solid #ff5656;color:#dc3434}
+.sri_btn_md:hover span {background:#f4f6fa}
+.sri_btn_md:hover span.sri_btn_immediately {background:#fef3f3}
+.sri_btn_sm {overflow:hidden;margin:0;padding:0;width:88px;height:24px;border:0;box-sizing:border-box;text-align:center;vertical-align:top;cursor:pointer}
+.sri_btn_sm span {display:inline-block;width:86px;height:22px;border:1px solid #d7dce5;border-radius:4px;color:#5c667b;font-family:"Malgun Gothic",sans-serif !important;font-size:13px !important;letter-spacing:-1px;line-height:22px;background:#fff}
+.sri_btn_sm span.sri_btn_immediately {position:relative;border:1px solid #ff5656;color:#dc3434}
+.sri_btn_sm:hover span {background:#f4f6fa}
+.sri_btn_sm:hover span.sri_btn_immediately {background:#fef3f3}
+.sri_btn_xs {overflow:hidden;margin:0;padding:0;height:18px;border:0;box-sizing:border-box;text-align:center;vertical-align:top;cursor:pointer}
+.sri_btn_xs span {display:inline-block;padding-top:1px;width:78px;height:18px;border:1px solid #dce2ef;box-sizing:border-box;color:#8a92a6;font-family:"Malgun Gothic",sans-serif !important;font-size:12px !important;letter-spacing:-1px;line-height:12px;vertical-align:top;background:#fff}
+.sri_btn_xs span.sri_btn_immediately {position:relative;width:52px;border:1px solid #ff5656;color:#dc3434}
+.sri_btn_xss {overflow:hidden;margin:0;padding:0;width:38px;height:18px;border:0;box-sizing:border-box;text-align:center;vertical-align:top;cursor:pointer}
+.sri_btn_xss span {display:inline-block;padding-right:1px;width:35px;height:16px;font-family:"Malgun Gothic",sans-serif;font-size:11px;letter-spacing:-1px;line-height:13px;vertical-align:top}
+span.sri_btn_passdata {border:1px solid #ff9494;color:#f76a6a;background:#fff}
+span.sri_btn_coverletter {border:1px solid #dbdbdb;color:#666;background:#fff}
+span.sri_btn_insatong {border:1px solid #aeb7dc;color:#8692c8;background:none}
+
+.scrollbar::-webkit-scrollbar {width:13px;background-color:rgba(0,0,0,0)}
+.scrollbar::-webkit-scrollbar-track,
+.scrollbar::-webkit-scrollbar-thumb {border:4px solid rgba(0,0,0,0);background-clip:padding-box;}
+.scrollbar::-webkit-scrollbar-track {background-color:transparent}
+.scrollbar::-webkit-scrollbar-thumb {border-radius:12px;background-color:#d7dce5;}
+.scrollbar::-webkit-scrollbar-button {display:none}
