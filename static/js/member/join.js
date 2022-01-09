@@ -793,7 +793,7 @@ var idExsistCheck = function(id_val) {
 		},
 		dataType: 'json',
 		type: 'get',
-		url: 'http://152.70.39.190:8081/member/id-check',
+		url: 'http://146.56.134.208:8081/member/id-check',
 		success: function(response, status, request) {
 			if (response.code === 'duplicate') {
 				if (isCompanyJoin && !$id.hasClass('invalid')) {
@@ -2992,7 +2992,7 @@ jQuery(function($) {
 			dataType: 'json',
 			contentType: 'application/json',
 			type: 'post',
-			url: 'http://152.70.39.190:8081/member/join',
+			url: 'http://146.56.134.208:8081/member/join',
 			success: function(response, status, request) {
 				location.href="/front/index.html";
 			},
